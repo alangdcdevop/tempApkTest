@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="BDSD-1195 Primer Pago" skipped="0" tests="1" time="134.93" timestamp="2020-04-07 05:26:00"><testcase name="Usuario paga un servicio con con monto editable para ARRIBA no modifica el monto y paga OK"><error message="Expected condition failed: waiting for By.AccessibilityId: Buscar empresa to be displayed (tried for 70 second(s) with 100 milliseconds interval)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'integracions-MacBook-Pro.local', ip: '2800:810:495:1874:0:0:0:1004%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'&#10;Driver info: driver.version: unknown&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'integracions-MacBook-Pro.local', ip: '2800:810:495:1874:0:0:0:1004%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for By.AccessibilityId: Buscar empresa to be displayed (tried for 70 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'integracions-MacBook-Pro.local', ip: '2800:810:495:1874:0:0:0:1004%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
+Driver info: driver.version: unknown
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'integracions-MacBook-Pro.local', ip: '2800:810:495:1874:0:0:0:1004%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
+Driver info: driver.version: unknown</error><system-err>Expected condition failed: waiting for By.AccessibilityId: Buscar empresa to be displayed (tried for 70 second(s) with 100 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'integracions-MacBook-Pro.local', ip: '2800:810:495:1874:0:0:0:1004%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
+Driver info: driver.version: unknown
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'integracions-MacBook-Pro.local', ip: '2800:810:495:1874:0:0:0:1004%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
+Driver info: driver.version: unknown
+packages.pageObject.Payments.usuario_completa_el_campo(Payments.java:56)
+packages.stepdefinitions.PaymentsSteps.usuario_completa_el_campo(PaymentsSteps.java:55)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>

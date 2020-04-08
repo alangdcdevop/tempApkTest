@@ -1,0 +1,44 @@
+[
+  {
+    "tna": "50%",
+    "id": "GU-MQDC4211",
+    "actionExpiration": "Acreditación en cuenta",
+    "amountToDraw": 6000.51,
+    "voucher": {
+      "transactionDate": {
+        "description": "09 de mayo de 2019 14:13",
+        "label": "Constitución Plazo Fijo"
+      },
+      "transactionDetails": [
+        {
+          "label": "Importe Invertido",
+          "description": "$ 4000.34"
+        },
+        {
+          "description": "$ 6000.51",
+          "label": "Importe a cobrar"
+        },
+        {
+          "description": "1 año",
+          "label": "Periodo de inversión"
+        },
+        {
+          "description": "50%",
+          "label": "T.N.A"
+        },
+        {
+          "description": "09/05/2020",
+          "label": "Vencimiento"
+        }
+      ],
+      "transactionId": {
+        "description": "GU-MQDC4211",
+        "label": "Código de operación"
+      }
+    },
+    "timeToString": "1 año",
+    "amountInvested": 4000.34,
+    "daysInvestment": 365,
+    "expiration": "09/05/2020"
+  }
+]

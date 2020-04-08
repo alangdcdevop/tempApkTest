@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"BDSD-1339 Primera Recarga","type":"feature","href":"fe9b392b0660245047f39fd396753f8d8fccc368f1929d36a5b6088cd9c50270.html","nodes":[],"selectable":false,"tags":["",""]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                > <span class="truncate-40">BDSD-1339 Primera Recarga</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="fa fa-comments-o"></i> Themes</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated </span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  BDSD-1339 Primera Recarga</h2>
+                                        </span>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                Como Usuario,<br />
+Quiero encontrar una empresa a través de la app de BDS.<br />
+Para poder hacer la recarga de un servicio.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#26ab96d697d575692d9a7631cfc5e98406fa14782fb68079559291632373ad32" title="View scenario details" >Reiniciar Datos</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#090ab5777310b50736690085fb57ad4b3d99f54cf0aec92c3943c1060d660dac" title="View scenario details" >Usuario recarga servicio, sistema muestra el mismo con su alias en home de recargas</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#3b66bb072f3ef7588170e2ce76b0c378e57ee7c68373699e6ae203293432287b" title="View scenario details" >Usuario ingresa a recargas, sistema debe mostrar rubros</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#d5576b21adfaecf6ee6075337775bbd2d378a607da0c6f2accb6f41bea27ed7f" title="View scenario details" >Usuario elige empresa SUBE, sistema debe ofrecer ingresar 16 digitos</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#40c5c0cf6baf8d7057841e5223c2dda9545f378b3dba11c6f20a9bfe4efc19a6" title="View scenario details" >Usuario elige empresa SUBE, sistema muestra los siguientes montos: 50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 800.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#08fdfbb29c9d13484126d40688451e39f7db9d9110e6f05f59dda091c529441c" title="View scenario details" >Usuario ingresa nro de tarjeta y confirma, sistema muestra montos pre determinables</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#b68632f7a8fcd4aa54ab7619018cee9e02b7b162ae2d5145ad14da80c9a235f5" title="View scenario details" >Sistema muestra pantalla de pre confirmación,  usuario debe poder editar alias y confirmar pago.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#090ab5777310b50736690085fb57ad4b3d99f54cf0aec92c3943c1060d660dac" title="View scenario details" >Usuario recarga servicio, sistema muestra el mismo con su alias en home de recargas</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#50f89ce27d3404fbe87dbfde9c16aa903aab76fbd49510ebdbba79821fdf6601" title="View scenario details" >Usuario elige empresa MOVI, sistema debe ofrecer ingresar 16 digitos.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#01b624772222909f61bc80c35aceb677593c8cf19dc71585c518438aa47b54b5" title="View scenario details" >Usuario elige empresa SAETA, sistema debe ofrecer ingresar de 7 a 8 digitos.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#f38b5fa223760e6703159d940cce7b50b0d15af7347239330454e96a3cec6c49" title="View scenario details" >Usuario elige empresa REDBUS Cordoba, sistema debe ofrecer ingresar de 7 a 8 digitos.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#65e535357fe0a85b08e2c4aa2a73b3048a09fa8fb85e877c2fede371ba46f21a" title="View scenario details" >Usuario elige empresa nullREDBUS Mendoza, sistema debe ofrecer ingresar de 7 a 8 digitos.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a1689f99bd8e10297ba8fff8fec09b44be4c658ecbdf52da4260f16e97e8dc70" title="View scenario details" >Usuario elige empresa nullREDBUS Tucuman, sistema debe ofrecer ingresar de 7 a 8 digitos.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#aabf37e67f35a1982e800822890c78b02a7758d8fc2708e5f23a457bab19334e" title="View scenario details" >Usuario elige empresa DirectTV, sistema debe ofrecer ingresar 16 digitos que comiencen con 057.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#d2e6760c9f4ffd25c13f6a012f55a54fde1be362a7f123392e3eb11255236ace" title="View scenario details" >Usuario elige cualquier empresa telefónica, sistema debe ofrecer ingresar (no menos ni mas) de 10 dígitos.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#3945a538d57375e0833514eceac468c56535ab60d82276dc76863a9ba085569c" title="View scenario details" >Usuario elige empresa SAETA, sistema debe ofrecer cargar cualquier monto desde 50 hasta 500.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="26ab96d697d575692d9a7631cfc5e98406fa14782fb68079559291632373ad32">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Background: Reiniciar Datos</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="090ab5777310b50736690085fb57ad4b3d99f54cf0aec92c3943c1060d660dac">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario recarga servicio, sistema muestra el mismo con su alias en home de recargas</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given Get to wiremock /emptyState</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullSUBE</p>
+                                                            <p>And usuario selecciona Entendido</p>
+                                                            <p>And usuario selecciona Ingresa el codigo de pago</p>
+                                                            <p>And usuario ingresa el valor 6061268061710543</p>
+                                                            <p>And usuario selecciona Continuar</p>
+                                                            <p>And usuario selecciona Recargar 150</p>
+                                                            <p>And Reset wiremock</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>Then usuario selecciona Finalizar</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="3b66bb072f3ef7588170e2ce76b0c378e57ee7c68373699e6ae203293432287b">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario ingresa a recargas, sistema debe mostrar rubros</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>Then sistema indica Empresas de Transporte</p>
+                                                            <p>And sistema indica Empresas de Celular</p>
+                                                            <p>And sistema indica Empresas de Television</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="d5576b21adfaecf6ee6075337775bbd2d378a607da0c6f2accb6f41bea27ed7f">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa SUBE, sistema debe ofrecer ingresar 16 digitos</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullSUBE</p>
+                                                            <p>And usuario selecciona Entendido</p>
+                                                            <p>And usuario presiona Nueva Recarga</p>
+                                                            <p>Then sistema muestra xpath //android.view.ViewGroup[@content-desc=&quot;Ingresa el codigo de pago&quot;]/android.view.ViewGroup[3]/android.widget.TextView con texto Son 16 dígitos</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="40c5c0cf6baf8d7057841e5223c2dda9545f378b3dba11c6f20a9bfe4efc19a6">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa SUBE, sistema muestra los siguientes montos: 50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 800.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullSUBE</p>
+                                                            <p>And usuario selecciona Entendido</p>
+                                                            <p>And usuario presiona Nueva Recarga</p>
+                                                            <p>And usuario selecciona Ingresa el codigo de pago</p>
+                                                            <p>And usuario ingresa el valor 6061268061710543</p>
+                                                            <p>And usuario selecciona Continuar</p>
+                                                            <p>Then sistema indica Recargar 50</p>
+                                                            <p>And sistema indica Recargar 100</p>
+                                                            <p>And sistema indica Recargar 150</p>
+                                                            <p>And sistema indica Recargar 200</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="08fdfbb29c9d13484126d40688451e39f7db9d9110e6f05f59dda091c529441c">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario ingresa nro de tarjeta y confirma, sistema muestra montos pre determinables</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullSUBE</p>
+                                                            <p>And usuario selecciona Entendido</p>
+                                                            <p>And usuario presiona Nueva Recarga</p>
+                                                            <p>And usuario selecciona Ingresa el codigo de pago</p>
+                                                            <p>And usuario ingresa el valor 6061268061710543</p>
+                                                            <p>And usuario selecciona Continuar</p>
+                                                            <p>And usuario selecciona Recargar 50</p>
+                                                            <p>Then sistema indica Vas a pagar a SUBE 50 pesos</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="b68632f7a8fcd4aa54ab7619018cee9e02b7b162ae2d5145ad14da80c9a235f5">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Sistema muestra pantalla de pre confirmación,  usuario debe poder editar alias y confirmar pago.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullSUBE</p>
+                                                            <p>And usuario selecciona Entendido</p>
+                                                            <p>And usuario presiona Nueva Recarga</p>
+                                                            <p>And usuario selecciona Ingresa el codigo de pago</p>
+                                                            <p>And usuario ingresa el valor 6061268061710543</p>
+                                                            <p>And usuario selecciona Continuar</p>
+                                                            <p>And usuario selecciona Recargar 50</p>
+                                                            <p>And usuario presiona Editar alias de tarjeta</p>
+                                                            <p>And usuario completa el campo campo de texto con el valor SUBETE</p>
+                                                            <p>And usuario presiona guardar alias</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>Then usuario selecciona Finalizar</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="090ab5777310b50736690085fb57ad4b3d99f54cf0aec92c3943c1060d660dac">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario recarga servicio, sistema muestra el mismo con su alias en home de recargas</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullSUBE</p>
+                                                            <p>And usuario selecciona Entendido</p>
+                                                            <p>And usuario presiona Nueva Recarga</p>
+                                                            <p>And usuario selecciona Ingresa el codigo de pago</p>
+                                                            <p>And usuario ingresa el valor 6061268061710543</p>
+                                                            <p>And usuario selecciona Continuar</p>
+                                                            <p>And usuario selecciona Recargar 50</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>Then sistema muestra xpath //android.view.ViewGroup[@content-desc=&quot;accessibilityLabel.mesage&quot;]/android.widget.TextView[2] con texto Recordá acreditar la carga en una Terminal Automática SUBE o en un dispositivo con NFC.</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="50f89ce27d3404fbe87dbfde9c16aa903aab76fbd49510ebdbba79821fdf6601">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa MOVI, sistema debe ofrecer ingresar 16 digitos.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullMOVI</p>
+                                                            <p>Then sistema muestra xpath //android.view.ViewGroup[@content-desc=&quot;Ingresa el codigo de pago&quot;]/android.view.ViewGroup[3]/android.widget.TextView con texto Son 16 dígitos</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="01b624772222909f61bc80c35aceb677593c8cf19dc71585c518438aa47b54b5">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa SAETA, sistema debe ofrecer ingresar de 7 a 8 digitos.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullSAETA</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="f38b5fa223760e6703159d940cce7b50b0d15af7347239330454e96a3cec6c49">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa REDBUS Cordoba, sistema debe ofrecer ingresar de 7 a 8 digitos.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullREDBUS Cordoba</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="65e535357fe0a85b08e2c4aa2a73b3048a09fa8fb85e877c2fede371ba46f21a">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa nullREDBUS Mendoza, sistema debe ofrecer ingresar de 7 a 8 digitos.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullREDBUS Mendoza</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a1689f99bd8e10297ba8fff8fec09b44be4c658ecbdf52da4260f16e97e8dc70">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa nullREDBUS Tucuman, sistema debe ofrecer ingresar de 7 a 8 digitos.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullREDBUS Tucuman</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="aabf37e67f35a1982e800822890c78b02a7758d8fc2708e5f23a457bab19334e">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa DirectTV, sistema debe ofrecer ingresar 16 digitos que comiencen con 057.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Celular</p>
+                                                            <p>And usuario selecciona nullClaro</p>
+                                                            <p>Then sistema muestra xpath //android.view.ViewGroup[@content-desc=&quot;Ingresa el codigo de pago&quot;]/android.view.ViewGroup[3]/android.widget.TextView con texto Con el código de área y sin el 15</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="d2e6760c9f4ffd25c13f6a012f55a54fde1be362a7f123392e3eb11255236ace">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige cualquier empresa telefónica, sistema debe ofrecer ingresar (no menos ni mas) de 10 dígitos.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Celular</p>
+                                                            <p>And usuario selecciona nullClaro</p>
+                                                            <p>Then sistema muestra xpath //android.view.ViewGroup[@content-desc=&quot;Ingresa el codigo de pago&quot;]/android.view.ViewGroup[3]/android.widget.TextView con texto Con el código de área y sin el 15</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="3945a538d57375e0833514eceac468c56535ab60d82276dc76863a9ba085569c">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario elige empresa SAETA, sistema debe ofrecer cargar cualquier monto desde 50 hasta 500.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Seccion de recargas</p>
+                                                            <p>And usuario selecciona Empresas de Transporte</p>
+                                                            <p>And usuario selecciona nullSAETA</p>
+                                                            <p>And usuario selecciona Ingresa el codigo de pago</p>
+                                                            <p>And usuario ingresa el valor 1234567</p>
+                                                            <p>And usuario selecciona Continuar</p>
+                                                            <p>And usuario selecciona Ingresa el monto a pagar</p>
+                                                            <p>And usuario esconde teclado</p>
+                                                            <p>Then sistema muestra xpath //android.view.ViewGroup[@content-desc=&quot;Ingresa el monto a pagar&quot;]/android.widget.TextView con texto Entre $50 y $500</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>0ms</td>
+                                                        <td>0ms</td>
+                                                        <td>0ms</td>
+                                                        <td>0ms</td>
+                                                        <td>0ms</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario recarga servicio, sistema muestra el mismo con su alias en home de recargas
+                                                    </td>
+                                                    <td>13</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario ingresa a recargas, sistema debe mostrar rubros
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa SUBE, sistema debe ofrecer ingresar 16 digitos
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa SUBE, sistema muestra los siguientes montos: 50, 100, 150, 200, 250, 300, 400, 500, 600, 700, 800.
+                                                    </td>
+                                                    <td>13</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario ingresa nro de tarjeta y confirma, sistema muestra montos pre determinables
+                                                    </td>
+                                                    <td>11</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Sistema muestra pantalla de pre confirmación,  usuario debe poder editar alias y confirmar pago.
+                                                    </td>
+                                                    <td>15</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario recarga servicio, sistema muestra el mismo con su alias en home de recargas
+                                                    </td>
+                                                    <td>12</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa MOVI, sistema debe ofrecer ingresar 16 digitos.
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa SAETA, sistema debe ofrecer ingresar de 7 a 8 digitos.
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa REDBUS Cordoba, sistema debe ofrecer ingresar de 7 a 8 digitos.
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa nullREDBUS Mendoza, sistema debe ofrecer ingresar de 7 a 8 digitos.
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa nullREDBUS Tucuman, sistema debe ofrecer ingresar de 7 a 8 digitos.
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa DirectTV, sistema debe ofrecer ingresar 16 digitos que comiencen con 057.
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige cualquier empresa telefónica, sistema debe ofrecer ingresar (no menos ni mas) de 10 dígitos.
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario elige empresa SAETA, sistema debe ofrecer cargar cualquier monto desde 50 hasta 500.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.0.69</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

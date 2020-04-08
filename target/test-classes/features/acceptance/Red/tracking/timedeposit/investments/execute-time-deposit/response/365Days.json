@@ -1,0 +1,43 @@
+{
+  "timeToString": "1 año",
+  "amountToDraw": 6000.51,
+  "tna": "50%",
+  "id": "YK-PPLL9009",
+  "expiration": "09/05/2020",
+  "amountInvested": 4000.34,
+  "daysInvestment": 90,
+  "actionExpiration": "Acreditación en cuenta",
+  "voucher": {
+    "transactionDate": {
+      "label": "Constitución Plazo Fijo",
+      "description": "09 de mayo de 2019 14:13"
+    },
+    "transactionId": {
+      "title": "El Plazo Fijo será acreditado en tu cuenta.",
+      "label": "Código de operación",
+      "description": "YK-PPLL9009"
+    },
+    "transactionDetails": [
+      {
+        "label": "Importe Invertido",
+        "description": "$ 4000.34"
+      },
+      {
+        "label": "Importe a cobrar",
+        "description": "$ 6000.51"
+      },
+      {
+        "label": "Periodo de inversión",
+        "description": "90 días"
+      },
+      {
+        "label": "T.N.A",
+        "description": "50%"
+      },
+      {
+        "label": "Vencimiento",
+        "description": "09/05/2020"
+      }
+    ]
+  }
+}

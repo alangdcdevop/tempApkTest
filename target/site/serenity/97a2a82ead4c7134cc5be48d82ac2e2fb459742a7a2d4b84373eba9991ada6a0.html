@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"BDSD-2536 Error en pago masivo","type":"feature","href":"97a2a82ead4c7134cc5be48d82ac2e2fb459742a7a2d4b84373eba9991ada6a0.html","nodes":[],"selectable":false,"tags":["",""]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                > <span class="truncate-40">BDSD-2536 Error En Pago Masivo</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="fa fa-comments-o"></i> Themes</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated </span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  BDSD-2536 Error En Pago Masivo</h2>
+                                        </span>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                Como usuario,<br />
+Quiero tener un detalle de los errores que surjan en un pago masivo<br />
+Para identificar cuáles pagos fallaron, saber por qué y cómo proceder.
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#26ab96d697d575692d9a7631cfc5e98406fa14782fb68079559291632373ad32" title="View scenario details" >Reiniciar Datos</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#aa69307e5ce9f57ed2f710503805d1718f540c464abb74f75253de78225ae7bd" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 47.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#2f27ed4eb6a92dbb2e69211cab3dbedcfd28e201e083cc19205491b6b8df299a" title="View scenario details" >Usuario confirma pago de servicios, sistema muestra congrats con numero de pagos abonados y opción de finalizar o compartir comprobantes.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#74a8d3eed22e1c5c3416f718556dab368803f271262cf0b75376f9e4bbc26608" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, dos empresas con error 47.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a0f4d41bde22b9591c8dceeff44e6b6add8851b9671ea34a9688b9a706561ec8" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, todas las empresas con error 47.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#74e2ecf356bad7a30db7e8bbf3b87cbb53b6f0561006495a89d99e271c29a4c9" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 41.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#0e4eba6c4a4504a88306cd6215f871f6fcf8339395c7c59e86a640d0d9edeb05" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 43.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#6a588abd1abb596a6548eccc8a3946ab7bd2c105122508a24ea5081fa3e3ab6f" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 44.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#4ebdae18440646dd1357f83c935dfdeadb33385b41ef7589f15e54c6aa4582c4" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 50.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#4a2ee824c05d526a546ae71dd287595a4dcc7dc87611440bf387b9f93c54ea0a" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 52.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#943fc33ed1482f474f9c7bc8cf39db80596cd088a1ddc05389e225ba6cb41ef9" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 56.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#2420f674f496e4d544385ac281cb1e0585e2fbf1f2acb11d3b2fcbd90003a2ed" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 57.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a9c3208d8baa5219fecde32c01fa15257de005abb615cca2ec22eddc0f725f15" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 58.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#d9efb5b1176b2339b1799723c88d8007fe9c500a7f8e69bf6060b477fe462bef" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 60.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#e0bbfb27d5e7272eb165f6996343dcb693a5f332c8553ba126f640c7204e2de2" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 63.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#929b1f213147ac5af73537ec50a6302c5aea3216ab1e766d4c5687e0ce992241" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 69.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5a9b1028f2b455cf50f82ef1a6ff1e4268cac0c879f82a5f5ad5b6e4ffd7f519" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 70.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#ea947b2053dfbe58279dd0728a89abcaaa2badd15663551737ec1c8a064d1570" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 72.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#7d7473bf36280bcca242973e2acc6829ec0a4ccc9d2324421b4619822546f606" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 73.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#194301af3d649b00ba3d6361c604f977ef93071cb01d5bd2b04ec3b858cf1897" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 74.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#0472fe99caaf7e9c04e1fbb19e8b1d921fdff9d5d577ecb3d6827d1af7e3cadc" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 75.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#30c513d2f6fa3ab243499d943152fde9a318e035e0ec21ebd2bc42d9bfe994aa" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 76.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5ae3f04276640ad339709a572e03b2c6f4a6d2cbff49c3999535914c9fda0b61" title="View scenario details" >Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 77.</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="26ab96d697d575692d9a7631cfc5e98406fa14782fb68079559291632373ad32">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Background: Reiniciar Datos</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="aa69307e5ce9f57ed2f710503805d1718f540c464abb74f75253de78225ae7bd">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 47.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors47</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And sistema muestra elemento Mensaje de pago con texto Pagaste 2 servicios</p>
+                                                            <p>And sistema muestra elemento Mensaje de error de pago con texto Edenor no se pudo abonar correctamente</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="2f27ed4eb6a92dbb2e69211cab3dbedcfd28e201e083cc19205491b6b8df299a">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario confirma pago de servicios, sistema muestra congrats con numero de pagos abonados y opción de finalizar o compartir comprobantes.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Finalizar</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="74a8d3eed22e1c5c3416f718556dab368803f271262cf0b75376f9e4bbc26608">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, dos empresas con error 47.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de más de un error.
+Sistema me permite acceder al detalle de cuáles fueron los errores y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrorsDos</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And sistema muestra elemento Mensaje de pago con texto Pagaste 1 servicio</p>
+                                                            <p>And sistema muestra elemento Mensaje de error de pago con texto Algunos servicios no se pudieron abonar correctamente</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema indica Edenor1 de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema indica VisaConFact de Visa por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a0f4d41bde22b9591c8dceeff44e6b6add8851b9671ea34a9688b9a706561ec8">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, todas las empresas con error 47.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta un warning de error en todos los pagos.
+Sistema me permite reintentar el pago, acceder al detalle de cuáles fueron los errores y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrorsTodos</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And sistema muestra elemento Mensaje de error de pago con texto Los servicios no se pudieron abonar correctamente</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10011 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema indica Edenor1 de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema indica VisaConFact de Visa por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema indica Multa140EditableAny de Multa 140 por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="74e2ecf356bad7a30db7e8bbf3b87cbb53b6f0561006495a89d99e271c29a4c9">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 41.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 41 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors41</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="0e4eba6c4a4504a88306cd6215f871f6fcf8339395c7c59e86a640d0d9edeb05">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 43.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 43 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors43</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10011 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Esta factura se encuentra en revisión. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="6a588abd1abb596a6548eccc8a3946ab7bd2c105122508a24ea5081fa3e3ab6f">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 44.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 44 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors44</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="4ebdae18440646dd1357f83c935dfdeadb33385b41ef7589f15e54c6aa4582c4">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 50.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 50 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors50</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="4a2ee824c05d526a546ae71dd287595a4dcc7dc87611440bf387b9f93c54ea0a">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 52.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 52 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors52</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="943fc33ed1482f474f9c7bc8cf39db80596cd088a1ddc05389e225ba6cb41ef9">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 56.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 56 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors56</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="2420f674f496e4d544385ac281cb1e0585e2fbf1f2acb11d3b2fcbd90003a2ed">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 57.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 57 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors57</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a9c3208d8baa5219fecde32c01fa15257de005abb615cca2ec22eddc0f725f15">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 58.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 58 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors58</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="d9efb5b1176b2339b1799723c88d8007fe9c500a7f8e69bf6060b477fe462bef">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 60.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 60 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors60</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Superaste la cantidad de consultas diarias permitidas. Por favor, intentalo nuevamente mañana</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="e0bbfb27d5e7272eb165f6996343dcb693a5f332c8553ba126f640c7204e2de2">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 63.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 63 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors63</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Superaste el monto diario permitido. Por favor, intentalo nuevamente mañana</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="929b1f213147ac5af73537ec50a6302c5aea3216ab1e766d4c5687e0ce992241">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 69.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 69 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors69</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="5a9b1028f2b455cf50f82ef1a6ff1e4268cac0c879f82a5f5ad5b6e4ffd7f519">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 70.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 70 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors70</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="ea947b2053dfbe58279dd0728a89abcaaa2badd15663551737ec1c8a064d1570">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 72.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 72 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors72</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="7d7473bf36280bcca242973e2acc6829ec0a4ccc9d2324421b4619822546f606">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 73.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 73 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors73</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="194301af3d649b00ba3d6361c604f977ef93071cb01d5bd2b04ec3b858cf1897">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 74.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 74 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors74</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="0472fe99caaf7e9c04e1fbb19e8b1d921fdff9d5d577ecb3d6827d1af7e3cadc">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 75.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 75 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors75</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="30c513d2f6fa3ab243499d943152fde9a318e035e0ec21ebd2bc42d9bfe994aa">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 76.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 76 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors76</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="5ae3f04276640ad339709a572e03b2c6f4a6d2cbff49c3999535914c9fda0b61">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 77.</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <div class="scenario-text">
+                                                                <i class="fa fa-info-circle"></i> Sistema presenta una congrats con warning de error 77 en un pago.
+Sistema me permite acceder al detalle de cuál fue el error y por qué.
+                                                            </div>
+                                                            <p>Given Reset wiremock</p>
+                                                            <p>And Get to wiremock /PaymentsErrors77</p>
+                                                            <p>When usuario accede a pagos</p>
+                                                            <p>And usuario selecciona Pagar varios servicios</p>
+                                                            <p>And usuario selecciona Seleccionar todos</p>
+                                                            <p>And usuario selecciona Nuevo pago</p>
+                                                            <p>And usuario selecciona Pagar</p>
+                                                            <p>And usuario selecciona Mensaje de error de pago</p>
+                                                            <p>Then sistema indica EdenorConFactNoEditable de Edenor por un valor de 10055 pesos con vencimiento el 04/12/21 no pudo ser abonado</p>
+                                                            <p>And sistema muestra elemento detalle de error con texto Ocurrió un error inesperado. Por favor, intentalo nuevamente más tarde</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>0ms</td>
+                                                        <td>0ms</td>
+                                                        <td>0ms</td>
+                                                        <td>0ms</td>
+                                                        <td>0ms</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 47.
+                                                    </td>
+                                                    <td>12</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario confirma pago de servicios, sistema muestra congrats con numero de pagos abonados y opción de finalizar o compartir comprobantes.
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, dos empresas con error 47.
+                                                    </td>
+                                                    <td>13</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, todas las empresas con error 47.
+                                                    </td>
+                                                    <td>13</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 41.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 43.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 44.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 50.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 52.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 56.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 57.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 58.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 60.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 63.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 69.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 70.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 72.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 73.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 74.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 75.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 76.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result UNDEFINED">
+                                                    <td>
+                                                            Usuario selecciona opción de pago masivo, elige más de un servicio y confirma pago, una empresa con error 77.
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <i class="fas fa-pause"
+                                                               title="No test has been implemented yet"></i>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.0.69</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

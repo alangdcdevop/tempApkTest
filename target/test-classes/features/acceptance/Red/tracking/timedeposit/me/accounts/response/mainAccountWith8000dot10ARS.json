@@ -1,0 +1,13 @@
+[
+  {
+    "primary": true,
+    "accountType": "CA",
+    "alias": "PALTA.TOMATE.LIMON",
+    "balance": 8000.10,
+    "id": "123456",
+    "currency": "$",
+    "number": "4025335-9 032-2",
+    "title": "Caja de Ahorro",
+    "cbu": "CBU: 004400301-113000"
+  }
+]

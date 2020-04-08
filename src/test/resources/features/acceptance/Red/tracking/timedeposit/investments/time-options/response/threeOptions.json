@@ -1,0 +1,34 @@
+[
+  {
+    "id": "0",
+    "timeToString": "1 mes",
+    "amountToDraw": 4164.737534246576,
+    "tna": "50%",
+    "expiration": "09/06/2019",
+    "amountInvested": 4000.34,
+    "daysInvestment": 30,
+    "actionExpiration": "Acreditación en cuenta"
+  },
+  {
+    "id": "1",
+    "timeToString": "3 meses",
+    "amountToDraw": 4493.532602739727,
+    "tna": "50%",
+    "expiration": "08/08/2019",
+    "amountInvested": 4000.34,
+    "daysInvestment": 90,
+    "actionExpiration": "Acreditación en cuenta"
+  },
+  {
+    "id": "2",
+    "timeToString": "1 año",
+    "amountToDraw": 6000.51,
+    "tna": "50%",
+    "expiration": "09/05/2020",
+    "amountInvested": 4000.34,
+    "daysInvestment": 365,
+    "actionExpiration": "Acreditación en cuenta"
+  }
+]
+
+

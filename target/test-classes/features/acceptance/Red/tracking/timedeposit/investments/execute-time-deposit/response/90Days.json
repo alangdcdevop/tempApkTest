@@ -1,0 +1,43 @@
+{
+  "timeToString": "3 meses",
+  "amountToDraw": 4493.532602739727,
+  "tna": "50%",
+  "id": "XY-XVZA9510",
+  "expiration": "08/08/2019",
+  "amountInvested": 4000.34,
+  "daysInvestment": 90,
+  "actionExpiration": "Acreditación en cuenta",
+  "voucher": {
+    "transactionDate": {
+      "label": "Constitución Plazo Fijo",
+      "description": "09 de mayo de 2019 14:10"
+    },
+    "transactionId": {
+      "title": "El Plazo Fijo será acreditado en tu cuenta.",
+      "label": "Código de operación",
+      "description": "XY-XVZA9510"
+    },
+    "transactionDetails": [
+      {
+        "label": "Importe Invertido",
+        "description": "$ 4000.34"
+      },
+      {
+        "label": "Importe a cobrar",
+        "description": "$ 4493.53"
+      },
+      {
+        "label": "Periodo de inversión",
+        "description": "90 días"
+      },
+      {
+        "label": "T.N.A",
+        "description": "50%"
+      },
+      {
+        "label": "Vencimiento",
+        "description": "08/08/2019"
+      }
+    ]
+  }
+}
